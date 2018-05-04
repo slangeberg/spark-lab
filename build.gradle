@@ -3,9 +3,6 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '1.2.3'
 }
 
-group 'template.spark'
-version '1.0-SNAPSHOT'
-
 apply plugin: 'java'
 apply plugin: 'scala'
 apply plugin: 'idea'
@@ -33,20 +30,16 @@ repositories {
 }
 
 dependencies {
-    compile "org.scala-lang:scala-library:"+scalaVersion
-    compile "org.scala-lang:scala-reflect:"+scalaVersion
-    compile "org.scala-lang:scala-compiler:"+scalaVersion
+//    compile "org.apache.spark:spark-mllib_2.11:$sparkVersion"
+    compile "org.apache.spark:spark-sql_2.11:$sparkVersion"
+//    compile "org.apache.spark:spark-streaming-flume-assembly_2.11:$sparkVersion"
+//    compile "org.apache.spark:spark-graphx_2.11:$sparkVersion"
+//    compile "org.apache.spark:spark-launcher_2.11:$sparkVersion"
+//    compile "org.apache.spark:spark-catalyst_2.11:$sparkVersion"
+//    compile "org.apache.spark:spark-streaming_2.11:$sparkVersion"
+    compile "org.apache.spark:spark-core_2.11:$sparkVersion"
 
-    compile 'org.apache.spark:spark-mllib_2.11:2.1.0'
-    compile 'org.apache.spark:spark-sql_2.11:2.1.0'
-    compile 'org.apache.spark:spark-streaming-flume-assembly_2.11:2.1.0'
-    compile 'org.apache.spark:spark-graphx_2.11:2.1.0'
-    compile 'org.apache.spark:spark-launcher_2.11:2.1.0'
-    compile 'org.apache.spark:spark-catalyst_2.11:2.1.0'
-    compile 'org.apache.spark:spark-streaming_2.11:2.1.0'
-    compile 'org.apache.spark:spark-core_2.11:2.1.0'
-
-    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile group: "commons-io", name: "commons-io", version: "2.5"
 }
 
 task run(type: JavaExec, dependsOn: classes) {
@@ -58,7 +51,7 @@ task run(type: JavaExec, dependsOn: classes) {
 jar {
     classifier = 'all'
     manifest {
-        attributes 'Implementation-Title': title,
+        attributes 'Implementation-Title': rootProject.name,
                 'Implementation-Version': version,
                 'Main-Class': mainClassFile
     }

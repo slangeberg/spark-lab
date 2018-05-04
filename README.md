@@ -1,14 +1,19 @@
 # spark-lab
 Apache Spark experiments using scala, apache spark built with gradle. Spark-shell provides `spark` and `sc` variables pre-initialised, here I did the same using a *scala trait* that you can extend.
 
-Original project template source: 
-<https://medium.com/@faizanahemad/apache-spark-setup-with-gradle-scala-and-intellij-2eeb9f30c02a>
+Original project template source: \
+<https://medium.com/@faizanahemad/apache-spark-setup-with-gradle-scala-and-intellij-2eeb9f30c02a>\
 <https://github.com/faizanahemad/spark-gradle-template>
 
 ## Prerequisites
 - [Java](https://java.com/en/download/)
 - [Gradle](https://gradle.org/)
 - [Scala](https://www.scala-lang.org/)
+
+
+## Libraries Included
+- Gradle wrapper - 4.7
+- Spark - 2.3
 
 ## Build and Demo process
 
@@ -86,8 +91,6 @@ object Main extends InitSpark {
 ## Using this Repo
 Just import it into your favorite IDE as a gradle project. Tested with IntelliJ to work. Or use your favorite editor and build from command line with gradle.
 
-## Libraries Included
-- Spark - 2.1.0
 
 ## Useful Links
 - [Spark Docs - Root Page](http://spark.apache.org/docs/latest/)
