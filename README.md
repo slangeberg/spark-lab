@@ -13,7 +13,7 @@ Original project template source: \
 
 ## Libraries Included
 - Gradle wrapper - 4.7
-- Spark - 2.3
+- Spark - 2.3.0
 
 ## Build and Demo process
 
